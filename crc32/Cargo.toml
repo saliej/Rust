@@ -1,0 +1,9 @@
+[package]
+
+name = "crc32"
+version = "0.0.1"
+authors = [ "Salie Jakoet <saliej@gmail.com>" ]
+
+[[bin]]
+
+name = "crc32"
