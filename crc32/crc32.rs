@@ -61,8 +61,7 @@ fn main() {
 		return;
 	}
 
-	// Get the file name from the commandline
-	// arguments
+	// Get the file name from the commandline arguments
 	let filename = &args[1];
 
 	// Open the file
@@ -90,11 +89,11 @@ fn compute_checksum(input : &[u8]) -> u32 {
     	| acc, &item | {
     		// Generate an index based on the low bits of our current 
     		// CRC XOR'd with current item in our array
-			let index = (acc & 0xFF) ^ (item as u32);
+		let index = (acc & 0xFF) ^ (item as u32);
 
-			// Right shift the crc by 8 bits and XOR it with the value
-			// in the look up table
-			(acc >> 8) ^ (TABLE[index as usize] as u32)
+		// Right shift the crc by 8 bits and XOR it with the value
+		// in the look up table
+		(acc >> 8) ^ (TABLE[index as usize] as u32)
 	}) ^ 0xFFFFFFFFu32 // XOR the final CRC with -1
 
 }
